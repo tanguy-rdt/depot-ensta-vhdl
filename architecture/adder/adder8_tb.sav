@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Wed Dec  9 09:37:53 2020
+[*]
+[dumpfile] "/home/tanguy/ENSTA_depot/depot-ensta-vhdl/exo2_aditionneur/adder8_tb.ghw"
+[dumpfile_mtime] "Wed Dec  9 09:35:28 2020"
+[dumpfile_size] 2878504
+[savefile] "/home/tanguy/ENSTA_depot/depot-ensta-vhdl/exo2_aditionneur/adder8_tb.sav"
+[timestart] 0
+[size] 1920 1023
+[pos] -451 -220
+*-31.294828 319205000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.adder8_tb.
+[sst_width] 212
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+top.adder8_tb.reset_n
+top.adder8_tb.clk
+@420
+top.adder8_tb.running
+@28
+top.adder8_tb.sreset
+top.adder8_tb.error_sig
+top.adder8_tb.cout
+@22
+#{top.adder8_tb.a[7:0]} top.adder8_tb.a[7] top.adder8_tb.a[6] top.adder8_tb.a[5] top.adder8_tb.a[4] top.adder8_tb.a[3] top.adder8_tb.a[2] top.adder8_tb.a[1] top.adder8_tb.a[0]
+#{top.adder8_tb.b[7:0]} top.adder8_tb.b[7] top.adder8_tb.b[6] top.adder8_tb.b[5] top.adder8_tb.b[4] top.adder8_tb.b[3] top.adder8_tb.b[2] top.adder8_tb.b[1] top.adder8_tb.b[0]
+@23
+#{top.adder8_tb.f[7:0]} top.adder8_tb.f[7] top.adder8_tb.f[6] top.adder8_tb.f[5] top.adder8_tb.f[4] top.adder8_tb.f[3] top.adder8_tb.f[2] top.adder8_tb.f[1] top.adder8_tb.f[0]
+[pattern_trace] 1
+[pattern_trace] 0

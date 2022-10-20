@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Sep 21 08:58:21 2021
+[*]
+[dumpfile] "/home/jcll/JCLL/ens/cours_vhdl_fipa2/compteur_evenements/compteur_tb.ghw"
+[dumpfile_mtime] "Tue Sep 21 08:57:06 2021"
+[dumpfile_size] 4347
+[savefile] "/home/jcll/JCLL/ens/cours_vhdl_fipa2/compteur_evenements/compteur.sav"
+[timestart] 0
+[size] 1920 1013
+[pos] -1 -1
+*-28.339611 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.compteur_tb.
+[treeopen] top.compteur_tb.dut.
+[sst_width] 212
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 293
+@420
+top.compteur_tb.running
+@28
+top.compteur_tb.reset_n
+top.compteur_tb.clk
+top.compteur_tb.incr
+top.compteur_tb.sreset
+@23
+#{top.compteur_tb.dut.cpt_i[7:0]} top.compteur_tb.dut.cpt_i[7] top.compteur_tb.dut.cpt_i[6] top.compteur_tb.dut.cpt_i[5] top.compteur_tb.dut.cpt_i[4] top.compteur_tb.dut.cpt_i[3] top.compteur_tb.dut.cpt_i[2] top.compteur_tb.dut.cpt_i[1] top.compteur_tb.dut.cpt_i[0]
+@22
+#{top.compteur_tb.dut.cpt[7:0]} top.compteur_tb.dut.cpt[7] top.compteur_tb.dut.cpt[6] top.compteur_tb.dut.cpt[5] top.compteur_tb.dut.cpt[4] top.compteur_tb.dut.cpt[3] top.compteur_tb.dut.cpt[2] top.compteur_tb.dut.cpt[1] top.compteur_tb.dut.cpt[0]
+[pattern_trace] 1
+[pattern_trace] 0

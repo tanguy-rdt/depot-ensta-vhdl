@@ -1,0 +1,18 @@
+#!/bin/sh
+
+FILE_NAME=$(readlink -f $0)
+WORKDIR=$(dirname ${FILE_NAME})
+STYLE_WORKDIR=${WORKDIR}/mdtopdf-style
+
+INPUT_FILE=${1}
+OUTPUT_FILE=${2}
+
+THEME=${3}
+
+pandoc -r markdown -w pdf \
+       ${INPUT_FILE} \
+       --toc \
+       --standalone \
+       --highlight-style ${STYLE_WORKDIR}/${THEME}.theme \
+       -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" \
+       -o ${OUTPUT_FILE}

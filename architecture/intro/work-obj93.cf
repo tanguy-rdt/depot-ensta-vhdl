@@ -1,0 +1,11 @@
+v 4
+file . "a.vhd" "c7e4d927c2bdd9c8f214d884e073ff6613195a3e" "20220905180907.533":
+  entity a at 1( 0) + 0 on 44;
+  architecture arch of a at 6( 66) + 0 on 45;
+file . "b.vhd" "30036d93cc1efea787c55ea8a1b2e5202233ecb3" "20220905180907.501":
+  entity b at 1( 0) + 0 on 39;
+  architecture arch1 of b at 6( 63) + 0 on 40;
+  architecture arch2 of b at 10( 108) + 0 on 41;
+file . "c.vhd" "13e2783a2d0988c704e7f8d7e796134fc938adf6" "20220905180907.518":
+  entity c at 1( 0) + 0 on 42;
+  architecture arch of c at 7( 77) + 0 on 43;

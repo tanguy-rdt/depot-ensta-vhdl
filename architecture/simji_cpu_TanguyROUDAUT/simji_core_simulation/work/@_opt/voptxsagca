@@ -1,0 +1,97 @@
+m255
+K3
+z0
+13
+cModel Technology
+dU:\Documents\SA3\VHDL\simji_core_simu
+T_opt
+!s110 1666208150
+V6Mm<6`Nlnc:P>DmVHFM560
+04 13 8 work simji_core_tb behavior 1
+=36-a62d300508fe-63505196-127-14c4
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4a;61
+Esimji_core
+Z0 w1666204356
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dU:/Documents/SA3/VHDL/simji_core_simulation
+Z5 8U:/Documents/SA3/VHDL/simji_core_simulation/simji_core.vhd
+Z6 FU:/Documents/SA3/VHDL/simji_core_simulation/simji_core.vhd
+l0
+L5
+V1S3m9HI6^nMJE5Bk?Bd:63
+!s100 4[1ik3GlnM2XOYg7=H@=f3
+Z7 OL;C;10.4a;61
+32
+!s110 1666204434
+!i10b 1
+Z8 !s108 1666204434.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA3/VHDL/simji_core_simulation/simji_core.vhd|
+Z10 !s107 U:/Documents/SA3/VHDL/simji_core_simulation/simji_core.vhd|
+!i113 0
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1
+Aarchi
+R1
+R2
+R3
+Z13 DEx4 work 10 simji_core 0 22 1S3m9HI6^nMJE5Bk?Bd:63
+l22
+L18
+VQX1IID_k>47<iUGCm`KmI3
+!s100 D60e@o0hWUf0b2QI_njOa1
+R7
+32
+!s110 1666204435
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Esimji_core_tb
+Z14 w1666208135
+R1
+R2
+R3
+R4
+Z15 8U:/Documents/SA3/VHDL/simji_core_simulation/simji_core_tb.vhd
+Z16 FU:/Documents/SA3/VHDL/simji_core_simulation/simji_core_tb.vhd
+l0
+L5
+V<nJH6RzNV>``Z15U?6K7M2
+!s100 iHFl[@j1Mgk8RFo]10D>@1
+R7
+32
+Z17 !s110 1666208139
+!i10b 1
+Z18 !s108 1666208139.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA3/VHDL/simji_core_simulation/simji_core_tb.vhd|
+Z20 !s107 U:/Documents/SA3/VHDL/simji_core_simulation/simji_core_tb.vhd|
+!i113 0
+R11
+R12
+Abehavior
+R13
+R1
+R2
+R3
+DEx4 work 13 simji_core_tb 0 22 <nJH6RzNV>``Z15U?6K7M2
+l91
+L8
+VQFE1BYTJlnY90[d:aoNR[1
+!s100 zJ5MC4_M[AlPf8o=Gd]0i1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R11
+R12
