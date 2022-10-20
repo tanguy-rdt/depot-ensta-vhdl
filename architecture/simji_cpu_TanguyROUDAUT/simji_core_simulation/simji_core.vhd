@@ -23,6 +23,8 @@ architecture archi of simji_core is
   signal halt_r, halt_c : std_logic;
 begin
 
+  -- process registers, permet une init asynchrone, et de récupérer les valeurs
+  -- de sortie du processus pour les données en entré
   registers: process(reset_n, clk)
   begin
     if reset_n='0' then
@@ -36,26 +38,27 @@ begin
     end if;
   end process;
 
+  -- process permettant la réalisation des opérations
   decode_exec: process(data_in, instr_in, regs_r, halt_r)
-    constant OPCODE_ADD        : std_logic_vector(4 downto 0) := "00001";
-    constant OPCODE_SUB        : std_logic_vector(4 downto 0) := "00010";
-    constant OPCODE_MUL        : std_logic_vector(4 downto 0) := "00011";
-    constant OPCODE_DIV        : std_logic_vector(4 downto 0) := "00100";
-    constant OPCODE_AND        : std_logic_vector(4 downto 0) := "00101";
-    constant OPCODE_OR         : std_logic_vector(4 downto 0) := "00110";
-    constant OPCODE_XOR        : std_logic_vector(4 downto 0) := "00111";
+    constant OPCODE_ADD        : std_logic_vector(4 downto 0) := "00001"; -- addition
+    constant OPCODE_SUB        : std_logic_vector(4 downto 0) := "00010"; -- soustraction
+    constant OPCODE_MUL        : std_logic_vector(4 downto 0) := "00011"; -- multiplication
+    constant OPCODE_DIV        : std_logic_vector(4 downto 0) := "00100"; -- division
+    constant OPCODE_AND        : std_logic_vector(4 downto 0) := "00101"; -- et logique
+    constant OPCODE_OR         : std_logic_vector(4 downto 0) := "00110"; -- ou logique
+    constant OPCODE_XOR        : std_logic_vector(4 downto 0) := "00111"; -- ou exclusif
 	 --
-    variable opcode        : std_logic_vector(4 downto 0);
-    variable alpha         : integer range 0 to 31;
-    variable beta          : integer range 0 to 31;
-    variable imm_o         : signed(15 downto 0);
-    variable reg_o         : integer range 0 to 31;
-    variable o             : std_logic_vector(31 downto 0);
-    variable immo_flag     : std_logic;
-    variable regs_v        : regs_t;
+    variable opcode        : std_logic_vector(4 downto 0); -- variable pour l'opération  
+    variable alpha         : integer range 0 to 31; -- choix du registre d'entrée
+    variable beta          : integer range 0 to 31; -- choix du registre de sortie
+    variable imm_o         : signed(15 downto 0); -- calcul à partir du registre instr
+    variable reg_o         : integer range 0 to 31; -- calcul avec un registre d'entrée
+    variable o             : std_logic_vector(31 downto 0); -- variable tampon
+    variable immo_flag     : std_logic; -- 1 si on fait l'opération avec imm_o ou reg_o
+    variable regs_v        : regs_t; -- registre tampon qui changé à chaque étape du calc
     variable halt_v        : std_logic;
-    variable instr_v       : std_logic_vector(31 downto 0);
-	 variable data_out_v    : std_logic_vector(31 downto 0);
+    variable instr_v       : std_logic_vector(31 downto 0); 
+	 variable data_out_v    : std_logic_vector(31 downto 0); -- registre contenant le result
 
   --
   begin
@@ -82,12 +85,14 @@ begin
     reg_o         := to_integer(unsigned(instr_v(9 downto  5)));
 	 regs_v(beta) := data_in;
     
+    -- choix du second argument de l'opération
     if immo_flag='1' then
       o := std_logic_vector(resize(imm_o,32));
     else
       o := regs_v(reg_o);
     end if;
 
+    -- réalisation du calcul signé en fonction de l'opérateur 
     case opcode is
       when OPCODE_ADD  =>
 	report "OPCODE_ADD"; 
@@ -114,11 +119,11 @@ begin
         report "ERROR: Unknow operator";
     end case;
 	 
-    regs_v(0) := (others =>'0');
-    data_out_v  := regs_v(beta);
+    regs_v(0) := (others =>'0'); -- bit 0 à 0 
+    data_out_v  := regs_v(beta); -- on donne à la sortie le résultat
 
     -- final update of combinatorial signals
-    regs_c    <= regs_v;
+    regs_c    <= regs_v; -- registre de sortie vaut le résultat
     halt_c    <= halt_v;
     data_out  <= data_out_v;
   end process;

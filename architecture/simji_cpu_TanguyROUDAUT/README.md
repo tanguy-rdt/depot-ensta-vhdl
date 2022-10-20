@@ -6,9 +6,9 @@ date: 19 octobre 2022
 
 
 # Introduction
-Le CPU *simji* est un CPU capable de réaliser différente opération, dans mon cas j'ai pu réaliser :
+Le CPU *simji* est un CPU capable de réaliser une différente opération, dans mon cas j’ai pu réaliser :
 
-1. L'adition
+1. L’adition
 2. La soustraction
 3. La multiplication
 4. La division 
@@ -16,7 +16,7 @@ Le CPU *simji* est un CPU capable de réaliser différente opération, dans mon 
 6. Le *'or'* 
 7. Le *'xor'* 
 
-Il est important de prendre compte que les opérations se font avec des registres signés, soit les valeurs sont sur 16bits ce qui nous permet de réaliser des calculs avec des valeurs allant de *-65536* à *65536*.
+Il est important de prendre en compte que les opérations se font avec des registres signés, soit les valeurs sont sur 16 bits ce qui nous permet de réaliser des calculs avec des valeurs allant de *-65536* à *65536*.
 
 # Travail réalisé
 
@@ -29,7 +29,6 @@ entity simji_core is
     halt           : out std_logic;
 
     instr_in       : in  std_logic_vector(31 downto 0);
-
     data_in        : in  std_logic_vector(31 downto 0);
     data_out       : out std_logic_vector(31 downto 0)
   );
@@ -37,14 +36,15 @@ end entity;
 ```
 
 1. `reset_n` pour reset les données, il est asynchrone donc immédiat.
-2. `clk` pour l'horloge
-3. `data_in` pour les données entrante
-4. `data_out` pour les données sortante
+2. `clk` pour l’horloge
+3. `data_in` pour les données entrantes
+4. `data_out` pour les données sortantes
 
 ## Les signaux 
 ```vhdl
 architecture archi of simji_core is
   type regs_t is array(0 to 31) of std_logic_vector(31 downto 0);
+
   signal regs_r, regs_c : regs_t;
   signal halt_r, halt_c : std_logic;
 begin
@@ -52,6 +52,7 @@ begin
 
 1. `regs_r`, un signal correspondant à une variable tampon pour les données entrantes, donc au début est égale à `data_in`
 2. `regs_c`, un signal correspondant à une variable tampon pour les données sortantes, donc à la fin du process `decode_exec` donné à `data_out`
+
    
 
 ## Les process
@@ -59,10 +60,11 @@ begin
 
 ![Diagramme logique du process *register*](./.img/register.png)
 
-**2 fonctionalité :**
 
-1. Le *process* register permet de rénitialiser les valeurs d'entrés de manière **asynchrone**, si *reset_n* vaut `1` le programme recommence avec le registre d'entrée initialisée
-2. A chaques coups de clock, la valeurs du registre d'entrée `regs_r` prend la valeur du registre de sortie `regs_c`
+**2 fonctionnalités :**
+
+1. Le *process* register permet de réinitialiser les valeurs d’entrés de manière **asynchrone**, si *reset_n* vaut `1` le programme recommence avec le registre d’entrée initialisée
+2. À chaque coup de clock, la valeur du registre d’entrée `regs_r` prend la valeur du registre de sortie `regs_c`
 
 ```vhdl
 registers: process(reset_n, clk)
@@ -83,26 +85,26 @@ registers: process(reset_n, clk)
 
 ![Diagramme logique du process *register* et *decode_exec*](./.img/full.png)
 
-Le process *decode_exec* est la partie principale du code. C'est ici que les opérations seront réalisé. 
+Le process *decode_exec* est la partie principale du code. C’est ici que les opérations seront réalisées. 
 
-Le registre `instr_in` indique quoi faire, ce registre sur *32bits* est distribué au différent registre de couleur rouge sur la *figure 2*. \
-La répartition de ce registre correspond au tableau suivant :
+Le registre `instr_in` indique quoi faire, ce registre sur *32 bits* est distribué au différent registre de couleur rouge sur la *figure 2*. \
+La répartition de ce registre correspond au tableau suivant :
 
 Variable | Registre de `instr_in` | Informations
 ---|---|----------------------
-$\beta$ | 0...4 | Permet de choisir le registre de sortie qui sera utilisé pour le résultat l'opération: regs_c($\beta$)
-$\alpha$ | 22...26 | Permet de choisir le registre d'entré qui sera utilisé pour l'opération: regs_r($\alpha$)
-`reg_o` | 9...5 | Permet de réaliser le calcul avec un des registres de regs_r(), soit la valeur d'une opération précédente ou de `data_in` si c'est la première itération 
-`imm_o` | 5...20 | Permet de réaliser le calcul avec une valeur choisis dans `instr_in`
-`immo_flg` | 21 | Si `immo_flg` vaut 1, l'opération se fait entre regs_r($\alpha$) et `imm_o`, sinon entre regs_r($\alpha$) et `reg_o`
-`opcode` | 27...31 | Permet de choisir le type d'opération à réaliser, exemple *00001* pour l'addition
+$\beta$ | 0...4 | Permet de choisir le registre de sortie qui sera utilisé pour le résultat l’opération : regs_c($\beta$)
+$\alpha$ | 22...26 | Permets de choisir le registre d’entrée qui sera utilisé pour l’opération : regs_r($\alpha$)
+`reg_o` | 9...5 | Permet de réaliser le calcul avec un des registres de regs_r(), soit la valeur d’une opération précédente ou de `data_in` si c’est la première itération 
+`imm_o` | 5...20 | Permet de réaliser le calcul avec une valeur choisie dans `instr_in`
+`immo_flg` | 21 | Si `immo_flg` vaut 1, l’opération se fait entre regs_r($\alpha$) et `imm_o`, sinon entre regs_r($\alpha$) et `reg_o`
+`opcode` | 27...31 | Permets de choisir le type d’opération à réaliser, exemple *00001* pour l’addition
 
 
-En s'aident du schéma de la *figure 2* et du code ci-dessous, on peut comprendre :
+En s’aidant du schéma de la *figure 2* et du code ci-dessous, on peut comprendre :
 
-1. On a le choix pour les registres qui devront subirent l'opération :
-   - On a le choix de prendre le registres d'entré que l'on souhaite grâce à $\alpha$ (de 0 à 31)
-   - Si c'est la première itération, `regs_r($\alpha$) contient un des registres donnée en entrée (regs_r($\alpha$)=regs_v($\beta$))
+1. On a le choix pour les registres qui devront subirent l’opération :
+   - On a le choix de prendre le registre d’entré que l’on souhaite grâce à $\alpha$ (de 0 à 31)
+   - Si c’est la première itération, `regs_r($\alpha$) contient un des registres donnée en entrée (regs_r($\alpha$)=regs_v($\beta$))
    - Si ce n'est pas la première itération, regs_r($\alpha$) contient un des registres donnée en entrée ou un des registres obtenus en sortie d'opération si le registre d'entrée à été écrasé. (regs_r($\alpha$)=regs_v($\beta$))
    - Si `immo_flg` vaut 1, l'opération ce fait entre regs_v($\beta$) et `imm_o`
    - Si `immo_flg` vaut 0, l'opération ce fait entre regs_v($\beta$) et `reg_o`
@@ -211,13 +213,13 @@ decode_exec: process(data_in, instr_in, regs_r, halt_r)
 
 ## La simulation
 
-La simulation à été réalisé avec différentes opérations à la suite, mais la première valeur d'entré vaut *0* comme la simulation ne fonctionne pas si je donne une valeurs différente de *0* à `data_in`. \
-Pour les opération suivantes elles ont étaient réalisé avec le résultat de l'opération précédente et `imm_o`, donc `immo_flg` vaut 1.
+La simulation a été réalisé avec différentes opérations à la suite, mais la première valeur d'entré vaut *0* comme la simulation ne fonctionne pas si je donne une valeur différente de *0* à `data_in`. \
+Pour les opérations suivantes elles ont étaient réalisé avec le résultat de l'opération précédente et `imm_o`, donc `immo_flg` vaut 1.
 
   1. Opération 1 - *Addition* : *0+1=1*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+       N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 0  | 0  | 1  | 0  | 0  | 0  | 0  | 0   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 
 
      - `opcode` = *0b00001* &rarr; Addition
@@ -229,8 +231,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   2. Opération 2 - *Addition* : *1+1=2*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+       N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 0  | 0  | 1  | 0  | 0  | 0  | 0  | 1   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 
 
      - `opcode` = *0b00001* &rarr; Addition
@@ -242,8 +244,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   3. Opération 3 - *Soustraction* : *2-4=-2*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 0  | 1  | 0  | 0  | 0  | 0  | 1  | 0   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 1 
 
      - `opcode` = *0b00010* &rarr; Soustraction
@@ -255,8 +257,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   4. Opération 4 - *Multiplication* : *-2x2=-4*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 0  | 1  | 1  | 0  | 0  | 0  | 1  | 1   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 
 
      - `opcode` = *0b00011* &rarr; Multiplication
@@ -268,8 +270,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   5. Opération 5 - *Division* : *-4/2=-2*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 1  | 0  | 0  | 0  | 0  | 1  | 0  | 0   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 1 
 
      - `opcode` = *0b00100* &rarr; Division
@@ -281,8 +283,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   6. Opération 6 - *Multiplication* : *-2x-3=6*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 0  | 1  | 1  | 0  | 0  | 1  | 0  | 1   | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 1 | 1 | 0 
 
      - `opcode` = *0b00011* &rarr; Multiplication
@@ -294,8 +296,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   7. Opération 7 - *and* : *0x00000006 and 0x00000002 = 0x00000002*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 1  | 0  | 1  | 0  | 0  | 1  | 1  | 0   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 
 
      - `opcode` = *0b00101* &rarr; and
@@ -307,8 +309,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   8. Opération 8 - *or* : *0x00000002 or 0x0000000b = 0x0000000b*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 1  | 1  | 0  | 0  | 0  | 1  | 1  | 1   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 
 
      - `opcode` = *0b00110* &rarr; or
@@ -320,8 +322,8 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
 
   9. Opération 9 - *xor* : *0x0000000b xor 0x00000003 = 0x00000008*
    
-      N°bits         | 31  | 30 | 29 | 28 | 27 | 26 | 25 | 24 | 23 | 22  | 21 | 20 | 19 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0
-      ------------------------------------------------------------|-----|----|----|----|----|----|----|----|----|-----|----|----|----|----|----|----|----|----|----|----|----|----|---|---|---|---|---|---|---|---|---|---
+      N°bits         |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|9|8|7|6|5|4|3|2|1|0
+      ------------------------------------------------------------|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
       `instr_in`     | 0   | 0  | 1  | 1  | 1  | 0  | 1  | 0  | 0  | 0   | 1  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 1 
 
      - `opcode` = *0b00111* &rarr; xor
@@ -331,12 +333,10 @@ Pour les opération suivantes elles ont étaient réalisé avec le résultat de 
      - `beta` = *0b01001* &rarr; `regs_c(9)` = *0x00000008*
 
 
-
-Le résultat de la simulation avec les opérations précédente correspond à la *figure 3*, on constate que les résultats obtenus correspondent à ceux de la théories :
-
-   
-
 ![Résultat de la simulation](./.img/simu.png)
+
+Le résultat de la simulation avec les opérations précédente correspond à la *figure 3*, on constate que les résultats obtenus correspondent à ceux de la théorie :
+
 
 
 
@@ -370,6 +370,8 @@ architecture archi of simji_core is
   signal halt_r, halt_c : std_logic;
 begin
 
+  -- process registers, permet une init asynchrone, et de récupérer les valeurs
+  -- de sortie du processus pour les données en entré
   registers: process(reset_n, clk)
   begin
     if reset_n='0' then
@@ -383,26 +385,27 @@ begin
     end if;
   end process;
 
+  -- process permettant la réalisation des opérations
   decode_exec: process(data_in, instr_in, regs_r, halt_r)
-    constant OPCODE_ADD        : std_logic_vector(4 downto 0) := "00001";
-    constant OPCODE_SUB        : std_logic_vector(4 downto 0) := "00010";
-    constant OPCODE_MUL        : std_logic_vector(4 downto 0) := "00011";
-    constant OPCODE_DIV        : std_logic_vector(4 downto 0) := "00100";
-    constant OPCODE_AND        : std_logic_vector(4 downto 0) := "00101";
-    constant OPCODE_OR         : std_logic_vector(4 downto 0) := "00110";
-    constant OPCODE_XOR        : std_logic_vector(4 downto 0) := "00111";
+    constant OPCODE_ADD        : std_logic_vector(4 downto 0) := "00001"; -- addition
+    constant OPCODE_SUB        : std_logic_vector(4 downto 0) := "00010"; -- soustraction
+    constant OPCODE_MUL        : std_logic_vector(4 downto 0) := "00011"; -- multiplication
+    constant OPCODE_DIV        : std_logic_vector(4 downto 0) := "00100"; -- division
+    constant OPCODE_AND        : std_logic_vector(4 downto 0) := "00101"; -- et logique
+    constant OPCODE_OR         : std_logic_vector(4 downto 0) := "00110"; -- ou logique
+    constant OPCODE_XOR        : std_logic_vector(4 downto 0) := "00111"; -- ou exclusif
 	 --
-    variable opcode        : std_logic_vector(4 downto 0);
-    variable alpha         : integer range 0 to 31;
-    variable beta          : integer range 0 to 31;
-    variable imm_o         : signed(15 downto 0);
-    variable reg_o         : integer range 0 to 31;
-    variable o             : std_logic_vector(31 downto 0);
-    variable immo_flag     : std_logic;
-    variable regs_v        : regs_t;
+    variable opcode        : std_logic_vector(4 downto 0); -- variable pour l'opération  
+    variable alpha         : integer range 0 to 31; -- choix du registre d'entrée
+    variable beta          : integer range 0 to 31; -- choix du registre de sortie
+    variable imm_o         : signed(15 downto 0); -- calcul à partir du registre instr
+    variable reg_o         : integer range 0 to 31; -- calcul avec un registre d'entrée
+    variable o             : std_logic_vector(31 downto 0); -- variable tampon
+    variable immo_flag     : std_logic; -- 1 si on fait l'opération avec imm_o ou reg_o
+    variable regs_v        : regs_t; -- registre tampon qui changé à chaque étape du calc
     variable halt_v        : std_logic;
-    variable instr_v       : std_logic_vector(31 downto 0);
-	 variable data_out_v    : std_logic_vector(31 downto 0);
+    variable instr_v       : std_logic_vector(31 downto 0); 
+	 variable data_out_v    : std_logic_vector(31 downto 0); -- registre contenant le result
 
   --
   begin
@@ -429,12 +432,14 @@ begin
     reg_o         := to_integer(unsigned(instr_v(9 downto  5)));
 	 regs_v(beta) := data_in;
     
+    -- choix du second argument de l'opération
     if immo_flag='1' then
       o := std_logic_vector(resize(imm_o,32));
     else
       o := regs_v(reg_o);
     end if;
 
+    -- réalisation du calcul signé en fonction de l'opérateur 
     case opcode is
       when OPCODE_ADD  =>
 	report "OPCODE_ADD"; 
@@ -461,14 +466,15 @@ begin
         report "ERROR: Unknow operator";
     end case;
 	 
-    regs_v(0) := (others =>'0');
-    data_out_v  := regs_v(beta);
+    regs_v(0) := (others =>'0'); -- bit 0 à 0 
+    data_out_v  := regs_v(beta); -- on donne à la sortie le résultat
 
     -- final update of combinatorial signals
-    regs_c    <= regs_v;
+    regs_c    <= regs_v; -- registre de sortie vaut le résultat
     halt_c    <= halt_v;
     data_out  <= data_out_v;
   end process;
+
 end architecture;
 ```
 
@@ -510,60 +516,96 @@ architecture behavior of simji_core_tb is
   
   type program_t is array(natural range <>) of addr_instr_paire;
 
+  -- partie de gauche, à l'itération x -- partie droite, instruction
   constant program : program_t := (
     (x"00000000", x"08200021"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  0  0  1  | 0  0  0  0  0  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 0 1 | 0 0 0 0 1
----    addition    |     alpha      | immo_flg |                imm_o                       |    beta    
---- 0+1=1
+    -- 0b00001              ->  addition 
+    -- 0b00000              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000001   ->  imm_o
+    -- 0b00001              ->  beta
+
+    -- 0+1=1
+
 
     (x"00000001", x"08600022"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  0  0  1  | 0  0  0  0  1  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 0 1 | 0 0 0 1 0
----    addition    |     alpha      | immo_flg |                imm_o                       |    beta    
---- 1+1=2
+    -- 0b00001              ->  addition 
+    -- 0b00001              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000001   ->  imm_o
+    -- 0b00010              ->  beta
+
+    -- 1+1=2
+      
       
     (x"00000002", x"10a00083"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  0  1  0  | 0  0  0  1  0  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 1 0 0 | 0 0 0 1 1
----  substraction  |     alpha      | immo_flg |                imm_o                       |    beta    
---- 2-4=-2
+    -- 0b00010              ->  Soustraction 
+    -- 0b00010              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000001   ->  imm_o
+    -- 0b00011              ->  beta
+    
+    -- 2-4=-2
       
+    
     (x"00000003", x"18e00044"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  0  1  1  | 0  0  0  1  1  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 1 0 | 0 0 1 0 0
---- multiplication |     alpha      | immo_flg |                imm_o                       |    beta    
---- -2*2=-4
+    -- 0b00011              ->  Multiplication 
+    -- 0b00011              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000010   ->  imm_o
+    -- 0b00100              ->  beta
 
+    -- -2*2=-4
+
+    
     (x"00000001", x"21200045"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  1  0  0  | 0  0  1  0  0  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 1 0 | 0 0 1 0 1
----    division    |     alpha      | immo_flg |                imm_o                       |    beta    
---- -4/2=-2
+    -- 0b00100              ->  Division 
+    -- 0b00100              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000010   ->  imm_o
+    -- 0b00101              ->  beta  
 
+    -- -4/2=-2
+
+    
     (x"00000003", x"197fffa6"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  0  1  1  | 0  0  1  0  1  |    1     | 1  1  1  1  1  1  1  1  1  1  1  1 1 1 0 1 | 0 0 1 1 0
---- multiplication |     alpha      | immo_flg |                imm_o                       |    beta    
---- -2*-3=6
+    -- 0b00011              ->  Multiplication 
+    -- 0b00101              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b1111111111111101   ->  imm_o
+    -- 0b00110              ->  beta
+    
+    -- -2*-3=6
+
 
     (x"00000001", x"29a00047"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  1  0  1  | 0  0  1  1  0  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 1 0 | 0 0 1 1 1
----       and      |     alpha      | immo_flg |                imm_o                       |    beta    
---- 0x00000006 and 0x00000002 = 0x00000002
+    -- 0b00101              ->  and 
+    -- 0b00110              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000010   ->  imm_o
+    -- 0b00111              ->  beta
+    
+    -- 0x00000006 and 0x00000002 = 0x00000002
+
 
     (x"00000001", x"31e00168"),
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  1  1  0  | 0  0  1  1  1  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 1 0 1 1 | 0 1 0 0 0
----       or       |     alpha      | immo_flg |                imm_o                       |    beta    
---- 0x00000002 or 0x0000000b = 0x0000000b
+    -- 0b00110              ->  or 
+    -- 0b00111              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000001011   ->  imm_o
+    -- 0b01000              ->  beta
+    
+    -- 0x00000002 or 0x0000000b = 0x0000000b
+
 
     (x"00000001", x"3a200069")
---- 31 30 29 28 27 | 26 25 24 23 22 |    21    | 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 | 4 3 2 1 0
---- 0  0  1  1  1  | 0  1  0  0  0  |    1     | 0  0  0  0  0  0  0  0  0  0  0  0 0 0 1 1 | 0 1 0 0 1
----       xor      |     alpha      | immo_flg |                imm_o                       |    beta    
---- 0x0000000b xor 0x00000003 = 0x00000008
+    -- 0b00111              ->  xor 
+    -- 0b01000              ->  alpha
+    -- 0b1                  ->  immo_flg
+    -- 0b0000000000000011   ->  imm_o
+    -- 0b01001              ->  beta
+
+    -- 0x0000000b xor 0x00000003 = 0x00000008
 
   );
   
@@ -597,10 +639,10 @@ begin
     wait until reset_n='1';
     wait_cycles(5);
 
-    for i in 0 to program'length-1 loop
+    for i in 0 to program'length-1 loop -- pour chaque instruction 
       wait until rising_edge(clk);
       report "executing instruction " & integer'image(i);
-      instr       <=  program(i).instr;
+      instr       <=  program(i).instr; -- on donne l'instruction i
     end loop;
 
     wait until rising_edge(clk);
