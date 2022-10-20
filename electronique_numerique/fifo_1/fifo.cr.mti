@@ -1,0 +1,20 @@
+U:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FIFO_tst
+-- Compiling architecture test_archi of FIFO_tst
+-- Loading entity FIFO
+
+} {} {}} U:/Documents/SA2/elecNum/fifo_1/fifo.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/fifo_1/fifo.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FIFO
+-- Compiling architecture DFF of FIFO
+
+} {} {}}

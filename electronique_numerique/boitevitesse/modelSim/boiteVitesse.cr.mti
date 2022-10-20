@@ -1,0 +1,56 @@
+U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity boite_vitesse_tb
+-- Compiling architecture bhe of boite_vitesse_tb
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity boite_vitesse
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(37): (vcom-1484) Unknown formal identifier "FREIN".
+
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(38): (vcom-1484) Unknown formal identifier "AVANCER".
+
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(39): (vcom-1484) Unknown formal identifier "CLEAR".
+
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(40): (vcom-1484) Unknown formal identifier "TEN_SEG".
+
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(41): (vcom-1484) Unknown formal identifier "ONE_SEG".
+
+** Warning: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(51): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+
+** Error: U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd(52): VHDL Compiler exiting
+
+} {12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 24.0 25.0} {}} U:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity top
+-- Compiling architecture archi of top
+
+} {} {}} U:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity compteur
+-- Compiling architecture compteur_archi of compteur
+
+} {} {}} U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd
+Model Technology ModelSim SE-64 vcom 10.4a Compiler 2015.03 Mar 25 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity boite_vitesse
+-- Compiling architecture archit_boite_vitesse of boite_vitesse
+
+} {} {}}

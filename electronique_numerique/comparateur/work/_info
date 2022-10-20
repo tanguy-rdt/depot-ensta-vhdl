@@ -1,0 +1,109 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/applis/modelsim/examples
+T_opt
+!s110 1652273156
+VUDO]XO^C2TLH`W]QYDS?f3
+04 11 5 work comparateur archi 1
+=1-9ae342f44e00-627bb003-226-1b60
+Z1 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z2 OL;O;10.4a;61
+R0
+T_opt1
+!s110 1652274020
+V51QL^`X>?HI^cBJC=^gYB3
+04 14 3 work comparateur_tb bhe 1
+=1-9ae342f44e00-627bb364-a6-2f60
+R1
+n@_opt1
+R2
+R0
+Ecomparateur
+Z3 w1652272515
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 dU:/Documents/SA2/elecNum/comparateur
+Z7 8U:/Documents/SA2/elecNum/comparateur/comparateur.vhd
+Z8 FU:/Documents/SA2/elecNum/comparateur/comparateur.vhd
+l0
+L5
+VCjPdRb7S9<;9UbU[1PgfG3
+!s100 97i=2_;Tj0<m`i94Lg^2T1
+Z9 OL;C;10.4a;61
+32
+Z10 !s110 1652274047
+!i10b 1
+Z11 !s108 1652274047.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/comparateur/comparateur.vhd|
+Z13 !s107 U:/Documents/SA2/elecNum/comparateur/comparateur.vhd|
+!i113 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1
+Aarchi
+R4
+R5
+Z16 DEx4 work 11 comparateur 0 22 CjPdRb7S9<;9UbU[1PgfG3
+l18
+L15
+V^V39RjLA7P<Z1k]endkUz3
+!s100 F6m?BlAP5AWNJB`z]X9Ac2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Ecomparateur_tb
+Z17 w1652273938
+Z18 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R4
+R5
+R6
+Z19 8U:/Documents/SA2/elecNum/comparateur/comparateur_tb.vhd
+Z20 FU:/Documents/SA2/elecNum/comparateur/comparateur_tb.vhd
+l0
+L9
+VgXb=DI2m7ccgj`I7Cco=>2
+!s100 >2NbO@^ZT:h;zdKagRO=h3
+R9
+32
+Z21 !s110 1652274048
+!i10b 1
+R11
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/comparateur/comparateur_tb.vhd|
+Z23 !s107 U:/Documents/SA2/elecNum/comparateur/comparateur_tb.vhd|
+!i113 0
+R14
+R15
+Abhe
+R16
+R18
+R4
+R5
+Z24 DEx4 work 14 comparateur_tb 0 22 gXb=DI2m7ccgj`I7Cco=>2
+l26
+L14
+Z25 VB[If8Dgd_^Gc8KXzOG@^L0
+Z26 !s100 91m]>Yl_D6^1;2[?<3`6d1
+R9
+32
+R21
+!i10b 1
+R11
+R22
+R23
+!i113 0
+R14
+R15

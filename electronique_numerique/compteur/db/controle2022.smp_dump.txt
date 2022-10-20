@@ -1,0 +1,6 @@
+
+State Machine - |controle2022|my_state
+Name my_state.S3 my_state.S2 my_state.S1 
+my_state.S1 0 0 0 
+my_state.S2 0 1 1 
+my_state.S3 1 0 1 

@@ -1,0 +1,1095 @@
+TimeQuest Timing Analyzer report for boiteVitesse
+Wed Jul 13 10:12:03 2022
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                        ;
++--------------------+-----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name      ; boiteVitesse                                        ;
+; Device Family      ; Cyclone II                                          ;
+; Device Name        ; EP2C35F672C6                                        ;
+; Timing Models      ; Final                                               ;
+; Delay Model        ; Combined                                            ;
+; Rise/Fall Delays   ; Unavailable                                         ;
++--------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 263.78 MHz ; 263.78 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.791 ; -69.977       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -30.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                              ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.791 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.827      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.750 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.786      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.743 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.779      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.740 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.700 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.736      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.699 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.735      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.556 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.590      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.528 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.562      ;
+; -2.515 ; compteur:P1|PRESCALER[20] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.549      ;
+; -2.515 ; compteur:P1|PRESCALER[20] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.549      ;
+; -2.515 ; compteur:P1|PRESCALER[20] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.549      ;
+; -2.515 ; compteur:P1|PRESCALER[20] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; -0.002     ; 3.549      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                               ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; compteur:P1|diz4[0]        ; compteur:P1|diz4[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.802 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; compteur:P1|PRESCALER[10]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.808 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.810 ; compteur:P1|PRESCALER[24]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.828 ; compteur:P1|cnt_one_enable ; compteur:P1|diz4[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.094      ;
+; 0.842 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.108      ;
+; 0.842 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.108      ;
+; 0.842 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.108      ;
+; 0.843 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.109      ;
+; 0.844 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.112      ;
+; 0.847 ; compteur:P1|PRESCALER[25]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.113      ;
+; 0.978 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.244      ;
+; 1.185 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.451      ;
+; 1.188 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.454      ;
+; 1.189 ; compteur:P1|PRESCALER[10]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.191 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.457      ;
+; 1.193 ; compteur:P1|PRESCALER[24]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.459      ;
+; 1.228 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.494      ;
+; 1.228 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.494      ;
+; 1.228 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.494      ;
+; 1.229 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.495      ;
+; 1.230 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.231 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.231 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.231 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.231 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.497      ;
+; 1.232 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.232 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.256 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.522      ;
+; 1.259 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.525      ;
+; 1.259 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.525      ;
+; 1.260 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.262 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.528      ;
+; 1.281 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.547      ;
+; 1.281 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.547      ;
+; 1.299 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.300 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.566      ;
+; 1.301 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.567      ;
+; 1.302 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.302 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.302 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.302 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.568      ;
+; 1.303 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.569      ;
+; 1.303 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.569      ;
+; 1.327 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.593      ;
+; 1.330 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.330 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.330 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.596      ;
+; 1.331 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.597      ;
+; 1.331 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.597      ;
+; 1.333 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.599      ;
+; 1.352 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.618      ;
+; 1.352 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.618      ;
+; 1.361 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.627      ;
+; 1.372 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.638      ;
+; 1.373 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.639      ;
+; 1.373 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.639      ;
+; 1.373 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.639      ;
+; 1.374 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.640      ;
+; 1.387 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.653      ;
+; 1.387 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.653      ;
+; 1.400 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.002      ; 1.668      ;
+; 1.401 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.667      ;
+; 1.401 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.667      ;
+; 1.404 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.670      ;
+; 1.423 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.689      ;
+; 1.423 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.689      ;
+; 1.432 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.698      ;
+; 1.443 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.709      ;
+; 1.444 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.710      ;
+; 1.444 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.710      ;
+; 1.444 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.710      ;
+; 1.445 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.711      ;
+; 1.458 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.724      ;
+; 1.458 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.724      ;
+; 1.458 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.724      ;
+; 1.459 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.725      ;
+; 1.471 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.002      ; 1.739      ;
+; 1.472 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.472 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.475 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.741      ;
+; 1.475 ; compteur:P1|PRESCALER[10]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.002      ; 1.743      ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; boite_vitesse:P2|led_start ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; boite_vitesse:P2|led_start ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|cnt_one_enable ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|cnt_one_enable ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|diz4[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|diz4[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[21]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[21]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[22]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[22]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[23]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[23]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[24]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[24]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[25]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[25]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[4]|clk        ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clef      ; clk        ; 0.608 ; 0.608 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clef      ; clk        ; 1.063 ; 1.063 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 7.367 ; 7.367 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 7.367 ; 7.367 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 7.347 ; 7.347 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 7.363 ; 7.363 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 7.347 ; 7.347 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 7.367 ; 7.367 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 7.347 ; 7.347 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 7.363 ; 7.363 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.750 ; -17.789       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -30.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                              ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.750 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.782      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.737 ; compteur:P1|PRESCALER[10] ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.769      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.733 ; compteur:P1|PRESCALER[8]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.765      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; compteur:P1|PRESCALER[2]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.740      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.700 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.732      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.692 ; compteur:P1|PRESCALER[1]  ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.724      ;
+; -0.644 ; compteur:P1|PRESCALER[0]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.678      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.629 ; compteur:P1|PRESCALER[21] ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.625 ; compteur:P1|PRESCALER[9]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.659      ;
+; -0.621 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.651      ;
+; -0.621 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.651      ;
+; -0.621 ; compteur:P1|PRESCALER[14] ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.651      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                               ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; compteur:P1|diz4[0]        ; compteur:P1|diz4[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.360 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; compteur:P1|PRESCALER[10]  ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; compteur:P1|PRESCALER[24]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.367 ; compteur:P1|cnt_one_enable ; compteur:P1|diz4[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.375 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; compteur:P1|PRESCALER[25]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.436 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.588      ;
+; 0.499 ; compteur:P1|PRESCALER[10]  ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501 ; compteur:P1|PRESCALER[24]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.515 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.517 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.519 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
+; 0.534 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.535 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.535 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.535 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.550 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.551 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.552 ; compteur:P1|PRESCALER[9]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.554 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.554 ; compteur:P1|PRESCALER[23]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.556 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.708      ;
+; 0.568 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.569 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.569 ; compteur:P1|PRESCALER[1]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.569 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.570 ; compteur:P1|PRESCALER[17]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; compteur:P1|PRESCALER[8]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.570 ; compteur:P1|PRESCALER[22]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.722      ;
+; 0.574 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.726      ;
+; 0.585 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.737      ;
+; 0.586 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.586 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.738      ;
+; 0.587 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.587 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.589 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.741      ;
+; 0.591 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.743      ;
+; 0.603 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.755      ;
+; 0.604 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.604 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.609 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.610 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.610 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.762      ;
+; 0.618 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[14] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.772      ;
+; 0.620 ; compteur:P1|PRESCALER[16]  ; compteur:P1|PRESCALER[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.772      ;
+; 0.621 ; compteur:P1|PRESCALER[0]   ; compteur:P1|PRESCALER[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.773      ;
+; 0.621 ; compteur:P1|PRESCALER[5]   ; compteur:P1|PRESCALER[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.773      ;
+; 0.622 ; compteur:P1|PRESCALER[7]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.774      ;
+; 0.622 ; compteur:P1|PRESCALER[21]  ; compteur:P1|PRESCALER[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.774      ;
+; 0.624 ; compteur:P1|PRESCALER[4]   ; compteur:P1|PRESCALER[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.776      ;
+; 0.626 ; compteur:P1|PRESCALER[20]  ; compteur:P1|PRESCALER[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.778      ;
+; 0.638 ; compteur:P1|PRESCALER[13]  ; compteur:P1|PRESCALER[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.639 ; compteur:P1|PRESCALER[14]  ; compteur:P1|PRESCALER[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.639 ; compteur:P1|PRESCALER[6]   ; compteur:P1|PRESCALER[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.644 ; compteur:P1|PRESCALER[15]  ; compteur:P1|PRESCALER[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.645 ; compteur:P1|PRESCALER[3]   ; compteur:P1|PRESCALER[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.645 ; compteur:P1|PRESCALER[19]  ; compteur:P1|PRESCALER[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.645 ; compteur:P1|PRESCALER[2]   ; compteur:P1|PRESCALER[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.645 ; compteur:P1|PRESCALER[18]  ; compteur:P1|PRESCALER[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.653 ; compteur:P1|PRESCALER[11]  ; compteur:P1|PRESCALER[15] ; clk          ; clk         ; 0.000        ; 0.002      ; 0.807      ;
++-------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; boite_vitesse:P2|led_start ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; boite_vitesse:P2|led_start ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|PRESCALER[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|PRESCALER[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|cnt_one_enable ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|cnt_one_enable ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; compteur:P1|diz4[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; compteur:P1|diz4[0]        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[12]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[13]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[14]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[15]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[16]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[17]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[18]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[19]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[20]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[21]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[21]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[22]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[22]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[23]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[23]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[24]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[24]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[25]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[25]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; P1|PRESCALER[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; P1|PRESCALER[4]|clk        ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; clef      ; clk        ; -0.037 ; -0.037 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clef      ; clk        ; 0.844 ; 0.844 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 4.408 ; 4.408 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 4.093 ; 4.093 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 4.093 ; 4.093 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 4.073 ; 4.073 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 4.088 ; 4.088 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 4.408 ; 4.408 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 4.073 ; 4.073 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 4.093 ; 4.093 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 4.073 ; 4.073 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 4.088 ; 4.088 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.791  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -2.791  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -69.977 ; 0.0   ; 0.0      ; 0.0     ; -30.38              ;
+;  clk             ; -69.977 ; 0.000 ; N/A      ; N/A     ; -30.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clef      ; clk        ; 0.608 ; 0.608 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clef      ; clk        ; 1.063 ; 1.063 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 7.912 ; 7.912 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 7.367 ; 7.367 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 7.367 ; 7.367 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 7.347 ; 7.347 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 7.363 ; 7.363 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; led_start   ; clk        ; 4.408 ; 4.408 ; Rise       ; clk             ;
+; ten_seg[*]  ; clk        ; 4.073 ; 4.073 ; Rise       ; clk             ;
+;  ten_seg[0] ; clk        ; 4.093 ; 4.093 ; Rise       ; clk             ;
+;  ten_seg[1] ; clk        ; 4.073 ; 4.073 ; Rise       ; clk             ;
+;  ten_seg[2] ; clk        ; 4.088 ; 4.088 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1055     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1055     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 28    ; 28   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Wed Jul 13 10:12:01 2022
+Info: Command: quartus_sta boiteVitesse -c boiteVitesse
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 16 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 8 of the 8 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'boiteVitesse.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.791
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.791       -69.977 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -30.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.750
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.750       -17.789 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -30.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4594 megabytes
+    Info: Processing ended: Wed Jul 13 10:12:03 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

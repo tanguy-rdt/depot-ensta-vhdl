@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dU:/Documents/SA2/PROJET1
+T_opt
+!s110 1652108606
+V:jdmH?U644>P1izf:49N]1
+04 7 3 work mux4_tb bhe 1
+=1-a62d300508fe-62792d3d-90-538
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4a;61
+R0
+Emux4
+Z1 w1652107644
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8U:/Documents/SA2/PROJET1/MUX4.vhd
+Z6 FU:/Documents/SA2/PROJET1/MUX4.vhd
+l0
+L5
+V[`QdCjToKIF5ZGZ3:4GGn1
+!s100 QmYM;]zB:lV2;<0TDbJ<70
+Z7 OL;C;10.4a;61
+32
+Z8 !s110 1652108663
+!i10b 1
+Z9 !s108 1652108663.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/PROJET1/MUX4.vhd|
+Z11 !s107 U:/Documents/SA2/PROJET1/MUX4.vhd|
+!i113 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Aarchi
+R2
+R3
+R4
+Z14 DEx4 work 4 mux4 0 22 [`QdCjToKIF5ZGZ3:4GGn1
+l15
+L13
+VUACU:g7[lXY39Q8=e39ed2
+!s100 Hoz>hf1ncAS<O;RgKFAQ83
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Emux4_tb
+Z15 w1652108206
+R2
+R3
+R4
+R0
+Z16 8U:/Documents/SA2/PROJET1/MUX4_tb.vhd
+Z17 FU:/Documents/SA2/PROJET1/MUX4_tb.vhd
+l0
+L9
+Vm7EK<Ble6=8F:M0^5BTWG2
+!s100 BV^GLCQz04JeHjP`BSPPB2
+R7
+32
+Z18 !s110 1652108664
+!i10b 1
+Z19 !s108 1652108664.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/PROJET1/MUX4_tb.vhd|
+Z21 !s107 U:/Documents/SA2/PROJET1/MUX4_tb.vhd|
+!i113 0
+R12
+R13
+Abhe
+R14
+R2
+R3
+R4
+Z22 DEx4 work 7 mux4_tb 0 22 m7EK<Ble6=8F:M0^5BTWG2
+l27
+L14
+Z23 VET9J2hBES=H`:_g?]]gKl3
+Z24 !s100 ZmLU09JeHNnHeA4;QFaG>1
+R7
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R12
+R13

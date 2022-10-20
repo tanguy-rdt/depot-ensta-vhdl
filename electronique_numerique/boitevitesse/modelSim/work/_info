@@ -1,0 +1,157 @@
+m255
+K3
+z0
+13
+cModel Technology
+dC:\APPLIS\altera
+Eboite_vitesse
+Z0 w1657618755
+Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dU:/Documents/SA2/elecNum/boitevitesse/modelSim
+Z6 8U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd
+Z7 FU:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd
+l0
+L6
+VJIhn32VUIljF_mVRKdz0J0
+!s100 6NZj3jCgLf?=5cNbf:8^V3
+Z8 OL;C;10.4a;61
+32
+!s110 1657618759
+!i10b 1
+Z9 !s108 1657618759.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd|
+Z11 !s107 U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse.vhd|
+!i113 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Aarchit_boite_vitesse
+R1
+R2
+R3
+R4
+Z14 DEx4 work 13 boite_vitesse 0 22 JIhn32VUIljF_mVRKdz0J0
+l18
+L14
+VilVbS?Ihi9P3N9BcaB>zA0
+!s100 9IJ;CRO5XA;XeiEI7eZ8i2
+R8
+32
+!s110 1657618760
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Eboite_vitesse_tb
+w1657574064
+DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R3
+R4
+R5
+8U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd
+FU:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd
+l0
+L11
+Va7<<jnn_e<bbJ@zG=aT5;3
+!s100 ghKPgKE9g<6GKj_[0<h@N1
+R8
+32
+Z15 !s110 1657618532
+!i10b 1
+!s108 1657618532.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd|
+!s107 U:/Documents/SA2/elecNum/boitevitesse/modelSim/boite_vitesse_tb.vhd|
+!i113 0
+R12
+R13
+Ecompteur
+Z16 w1657618452
+R1
+R2
+R3
+R4
+R5
+Z17 8U:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd
+Z18 FU:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd
+l0
+L5
+V`Fhg2ERFD10jOaFLBD:L42
+!s100 =J@UUU9bBj2L5EO9WPIG50
+R8
+32
+R15
+!i10b 1
+Z19 !s108 1657618531.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd|
+Z21 !s107 U:/Documents/SA2/elecNum/boitevitesse/modelSim/compteur.vhd|
+!i113 0
+R12
+R13
+Acompteur_archi
+R1
+R2
+R3
+R4
+DEx4 work 8 compteur 0 22 `Fhg2ERFD10jOaFLBD:L42
+l21
+L16
+VLRQ[]nDFV@C?IjXlEb`7a0
+!s100 9mO5:H>YH7AKhOjbiM2g42
+R8
+32
+R15
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R12
+R13
+Etop
+Z22 w1657616275
+R1
+R2
+R3
+R4
+R5
+Z23 8U:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd
+Z24 FU:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd
+l0
+L5
+Vc=2c4?g[P:=iK7ULH8MIb3
+!s100 GXA>`b:0aPFXei^JZEWJY2
+R8
+32
+Z25 !s110 1657618531
+!i10b 1
+R19
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd|
+Z27 !s107 U:/Documents/SA2/elecNum/boitevitesse/modelSim/top.vhd|
+!i113 0
+R12
+R13
+Aarchi
+R1
+R2
+R3
+R4
+DEx4 work 3 top 0 22 c=2c4?g[P:=iK7ULH8MIb3
+l41
+L14
+VzW`?2MXReMC`<UQ0FmPJl0
+!s100 ?CDIedXRhXCcNIjWS_1?n2
+R8
+32
+R25
+!i10b 1
+R19
+R26
+R27
+!i113 0
+R12
+R13

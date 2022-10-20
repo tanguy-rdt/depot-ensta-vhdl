@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 13 10:11:49 2022
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : boiteVitesse
+Top-level Entity Name : top
+Family : Cyclone II
+Total logic elements : 38
+    Total combinational functions : 37
+    Dedicated logic registers : 29
+Total registers : 29
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

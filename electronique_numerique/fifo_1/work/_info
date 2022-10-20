@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/applis/modelsim/examples
+T_opt
+!s110 1654242841
+VD2F1MP5fejig9SLV6<2U21
+04 8 10 work fifo_tst test_archi 1
+=1-309c237c1e2c-6299be17-6a-4dc
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4a;61
+R0
+Efifo
+Z1 w1654241068
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dU:/Documents/SA2/elecNum/fifo_1
+Z6 8U:/Documents/SA2/elecNum/fifo_1/fifo.vhd
+Z7 FU:/Documents/SA2/elecNum/fifo_1/fifo.vhd
+l0
+L12
+VJQK^D[DWA>][IJZCZ`5I`0
+!s100 8:li9Y@ddmOVi=JOB_LYZ1
+Z8 OL;C;10.4a;61
+32
+Z9 !s110 1654242886
+!i10b 1
+Z10 !s108 1654242885.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/fifo_1/fifo.vhd|
+Z12 !s107 U:/Documents/SA2/elecNum/fifo_1/fifo.vhd|
+!i113 0
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1
+Adff
+R2
+R3
+R4
+Z15 DEx4 work 4 fifo 0 22 JQK^D[DWA>][IJZCZ`5I`0
+l34
+L28
+VLbBGmdA3E[R<Nl5W78RV[3
+!s100 XHU0mVJ6dodf234Y_;B6?0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Efifo_tst
+Z16 w1654241129
+R2
+R3
+R4
+R5
+Z17 8U:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd
+Z18 FU:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd
+l0
+L31
+V0@O1KFj;_>BA5jS7>XYCP3
+!s100 afam6NNeC?>>l27gN9:U]0
+R8
+32
+R9
+!i10b 1
+Z19 !s108 1654242886.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|U:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd|
+Z21 !s107 U:/Documents/SA2/elecNum/fifo_1/FIFO-tb.vhd|
+!i113 0
+R13
+R14
+Atest_archi
+R15
+R2
+R3
+R4
+Z22 DEx4 work 8 fifo_tst 0 22 0@O1KFj;_>BA5jS7>XYCP3
+l50
+L34
+Z23 VdoZ^WOE4OA62G4HbezF_k2
+Z24 !s100 a7ez>lZOEJQ2=JFklA_fX2
+R8
+32
+!s110 1654242887
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R13
+R14
