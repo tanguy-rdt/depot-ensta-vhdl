@@ -57,7 +57,7 @@ begin
 ## Les process
 ### registers
 
-![Diagramme logique du process *register*](./img/register.png)
+![Diagramme logique du process *register*](./.img/register.png)
 
 **2 fonctionalité :**
 
@@ -81,7 +81,7 @@ registers: process(reset_n, clk)
 
 ### decode_exec
 
-![Diagramme logique du process *register* et *decode_exec*](./img/full.png)
+![Diagramme logique du process *register* et *decode_exec*](./.img/full.png)
 
 Le process *decode_exec* est la partie principale du code. C'est ici que les opérations seront réalisé. 
 
@@ -336,7 +336,7 @@ Le résultat de la simulation avec les opérations précédente correspond à la
 
    
 
-![Résultat de la simulation](./img/simu.png)
+![Résultat de la simulation](./.img/simu.png)
 
 
 
