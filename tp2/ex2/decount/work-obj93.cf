@@ -1,0 +1,7 @@
+v 4
+file . "decount_tb.vhd" "2d9740c2cf839cd7034b5a4a876fe51da16bfd31" "20231106154242.613":
+  entity decount_tb at 7( 311) + 0 on 13;
+  architecture bhv of decount_tb at 14( 417) + 0 on 14;
+file . "decount.vhd" "91d2104180822d7ce37ed32aa5cc6a98b6e0ebb1" "20231106153912.122":
+  entity decount at 1( 0) + 0 on 11;
+  architecture arch of decount at 12( 205) + 0 on 12;
