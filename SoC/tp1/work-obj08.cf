@@ -1,0 +1,4 @@
+v 4
+file . "soc_tb.vhd" "4a084b37d10d5ea79d57c5438b033d51adcf5dbe" "20240117094154.081":
+  entity soc_tb at 4( 129) + 0 on 11;
+  architecture bhv of soc_tb at 18( 345) + 0 on 12;

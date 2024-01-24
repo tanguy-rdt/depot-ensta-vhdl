@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Mon Nov  7 14:18:51 2022
+[*]
+[dumpfile] "/home/jcll/JCLL/ens/cours_vhdl_fipa3/top.ghw"
+[dumpfile_mtime] "Mon Nov  7 14:16:43 2022"
+[dumpfile_size] 1036420
+[savefile] "/home/jcll/JCLL/ens/cours_vhdl_fipa3/top.sav"
+[timestart] 0
+[size] 1920 1013
+[pos] 1920 0
+*-36.088055 24400000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_tb.
+[treeopen] top.top_tb.dut.
+[sst_width] 212
+[signals_width] 86
+[sst_expanded] 1
+[sst_vpaned_height] 293
+@420
+top.top_tb.running
+@28
+top.top_tb.reset_n
+top.top_tb.clk100
+top.top_tb.tx
+@420
+top.top_tb.dut.rcvr_i.state_r
+@28
+top.top_tb.dut.tick_gen_i.tick
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,16 @@
+v 4
+file . "ip_codes/ip_switches.vhd" "0995ef84901efbaf4423160131000890c19645fc" "20240117094153.930":
+  entity ip_switches at 1( 0) + 0 on 19;
+  architecture rtl of ip_switches at 24( 634) + 0 on 20;
+file . "ip_codes/ip_bram.vhd" "9760c4cc19294a5ca29259660093a49641d9b454" "20240117094153.905":
+  entity ip_bram at 1( 0) + 0 on 15;
+  architecture rtl of ip_bram at 26( 654) + 0 on 16;
+file . "ip_codes/bram.vhd" "c2c8d5f164303993214db8994903e8372c1f9118" "20240117094153.874":
+  entity bram at 1( 0) + 0 on 11;
+  architecture rtl of bram at 19( 414) + 0 on 12;
+file . "ip_codes/fifo.vhd" "d5eb4047cf9f7542218833681752ffbe6ba57835" "20240117094153.890":
+  entity fifo at 1( 0) + 0 on 13;
+  architecture rtl of fifo at 27( 642) + 0 on 14;
+file . "ip_codes/ip_leds.vhd" "9d4a1f7da82ed485697f3484becad4ec5bcfd8d8" "20240117094153.918":
+  entity ip_leds at 1( 0) + 0 on 17;
+  architecture rtl of ip_leds at 25( 690) + 0 on 18;
