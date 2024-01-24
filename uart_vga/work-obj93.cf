@@ -1,4 +1,0 @@
-v 4
-file . "tick_generator.vhd" "30b9ab4d0096ddd9d75f7db1a023dcb6756ae90f" "20231115083502.199":
-  entity tick_generator at 1( 0) + 0 on 13;
-  architecture arch of tick_generator at 12( 184) + 0 on 14;
